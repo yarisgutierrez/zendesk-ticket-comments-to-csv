@@ -21,7 +21,7 @@ args = {'directory': '',    # Output directory
 In the case your are expecting various CSV files to be created during the rotation, file will be created using the filename structure `01_output.csv`, `02_output.csv`, etc.
 
 ### Usage
-```python
+```
 python xml-to-csv.py file-to-parse.xml
 ```
 **Note:** Currently, the file *only*  checks for XML files.
