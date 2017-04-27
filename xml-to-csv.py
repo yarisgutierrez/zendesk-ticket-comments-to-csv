@@ -84,8 +84,8 @@ class RotateFile(object):
         return "%0.2d" % self.ii + "_" + self.filename
 
 
-def comments():
-    for comment in root.iter('comment'):
+def comments(ticket):
+    for comment in ticket.iter('comment'):
         created_at = comment.find("created-at").text
         value = comment.find("value").text
         author_id = comment.find("author-id").text
@@ -97,7 +97,7 @@ def comments():
 def tickets(root):
     for ticket in root.iter('ticket'):
         nice_id = ticket.find("nice-id").text
-        for comment in comments():
+        for comment in comments(ticket):
             created_at, value, author_id = comment
             yield nice_id, created_at, author_id, value
 
